@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lodestar Homepage</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Animations for hero text lines */
+    .line1, .line2, .line3 {
+      opacity: 0;
+      transform: translateY(50px);
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-out;
+      animation-name: slideUpFade;
+      animation-duration: 0.4s;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes slideUpFade {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <video src="videohome.mp4" autoplay muted loop playsinline></video>
+
+    <div class="top-bar"></div>
+
+    <nav class="navbar">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Lodestar Logo" class="logo normal-logo" />
+        <img src="logo-dark.png" alt="Lodestar Logo Dark" class="logo dark-logo" />
+      </a>
+      <div class="nav-buttons">
+        <button class="btn-contact">CONTACT</button>
+        <a href="projects.html" class="nav-btn">PROJECTS</a>
+        <button class="nav-btn">ABOUT ME</button>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="line1">
+          <span class="built-el-it">A</span>
+          <span class="built-it journey">JOURNEY</span>
+        </div>
+        <div class="line2">
+          <span class="built-it">INTO THE ART</span>
+          <span class="built-el-it of">OF</span>
+        </div>
+        <div class="line3">
+          <span class="built-bold-it">CREATION</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content">
+  </section>
+
+  <footer class="footer">
+    <p>Lodestar © 2025. All rights reserved.</p>
+    <p>Portfolio for character design, AI tools, and storytelling projects.</p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      const hero = document.querySelector('.hero');
+      const normalLogo = document.querySelector('.normal-logo');
+      const darkLogo = document.querySelector('.dark-logo');
+      const heroBottom = hero.offsetTop + hero.offsetHeight;
+      const scrollY = window.scrollY;
+
+      const fadeStart = heroBottom - 200;
+      const fadeEnd = heroBottom - 60;
+
+      if (scrollY >= fadeStart && scrollY <= fadeEnd) {
+        const progress = (scrollY - fadeStart) / (fadeEnd - fadeStart);
+        normalLogo.style.opacity = 1 - progress;
+        darkLogo.style.opacity = progress;
+      } else if (scrollY < fadeStart) {
+        normalLogo.style.opacity = 1;
+        darkLogo.style.opacity = 0;
+      } else {
+        normalLogo.style.opacity = 0;
+        darkLogo.style.opacity = 1;
+      }
+    });
+
+    // Cursor effect
+    const cursor1 = document.createElement('img');
+    cursor1.src = 'cursor1.png';
+    cursor1.style.position = 'fixed';
+    cursor1.style.pointerEvents = 'none';
+    cursor1.style.width = '65px';
+    cursor1.style.height = '65px';
+    cursor1.style.zIndex = '9999';
+    document.body.appendChild(cursor1);
+
+    const cursor2 = document.createElement('img');
+    cursor2.src = 'cursor2.png';
+    cursor2.style.position = 'fixed';
+    cursor2.style.pointerEvents = 'none';
+    cursor2.style.width = '65px';
+    cursor2.style.height = '65px';
+    cursor2.style.zIndex = '9998';
+    document.body.appendChild(cursor2);
+
+    window.addEventListener('mousemove', function(e) {
+      cursor1.style.left = e.clientX + 'px';
+      cursor1.style.top = e.clientY + 'px';
+
+      setTimeout(() => {
+        cursor2.style.left = e.clientX + 'px';
+        cursor2.style.top = e.clientY + 'px';
+      }, 50);
+    });
+  </script>
+
+</body>
+</html>
