@@ -1,30 +1,30 @@
 @font-face {
   font-family: 'Built Titling';
-  src: url('BuiltTitlingELIt.otf') format('opentype');
+  src: url('fonts/BuiltTitlingELIt.otf') format('opentype');
   font-style: italic;
   font-weight: 200;
 }
 @font-face {
   font-family: 'Built Titling';
-  src: url('BuiltTitlingIt.otf') format('opentype');
+  src: url('fonts/BuiltTitlingIt.otf') format('opentype');
   font-style: italic;
   font-weight: 400;
 }
 @font-face {
   font-family: 'Built Titling';
-  src: url('BuiltTitlingBoldIt.otf') format('opentype');
+  src: url('fonts/BuiltTitlingBoldIt.otf') format('opentype');
   font-style: italic;
   font-weight: 700;
 }
 @font-face {
   font-family: 'Nobel';
-  src: url('fonts.com-Nobel_Bold_Condensed.otf') format('opentype');
+  src: url('fonts/fonts.com-Nobel_Bold_Condensed.otf') format('opentype');
   font-weight: bold;
   font-stretch: condensed;
 }
 @font-face {
   font-family: 'Nobel';
-  src: url('fonts.com-Nobel_Regular.otf') format('opentype');
+  src: url('fonts/fonts.com-Nobel_Regular.otf') format('opentype');
   font-weight: normal;
 }
 
@@ -76,8 +76,8 @@ body, html {
 
 .logo-link {
   position: absolute;
-  left: calc(50% - 70px);
-  top: calc(50% - 20px);
+  left: calc(50% - 30px);
+  top: 50%;
   transform: translate(0, -50%);
   display: flex;
   align-items: center;
@@ -172,7 +172,8 @@ body, html {
 
 .hero-text .line1,
 .hero-text .line2,
-.hero-text .line3 {
+.hero-text .line3,
+.hero-text .line4 {
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -224,3 +225,4 @@ body, html {
     right: 20px;
   }
 }
+
